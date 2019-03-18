@@ -223,22 +223,51 @@ public class Series {
         int imp = 1;
         double total = 0;
         String r = "";
-        
+
         for (int i = 1; i <= q; i++) {
-                    num = Math.pow(q, imp);
-                    div = (num / factorial(imp));
-                    if ((cont % 2) == 0) {
-                        op = " + ";
-                        r += ((q + "^" + imp) + " / " + imp + "!" + op);
-                        total = total - div;
-                    } else {
-                        op = " - ";
-                        r += ((q + "^" + imp) + " / " + imp + "!" + op);
-                        total = total + div;
-                    }
-                    cont++;
-                imp = imp + 2;
+            num = Math.pow(q, imp);
+            div = (num / factorial(imp));
+            if ((cont % 2) == 0) {
+                op = "  +  ";
+                r += ((q + "^" + imp) + " / " + imp + "!" + op);
+                total = total - div;
+            } else {
+                op = "  -  ";
+                r += ((q + "^" + imp) + " / " + imp + "!" + op);
+                total = total + div;
+            }
+            cont++;
+            imp = imp + 2;
         }
         return r + " = " + total;
+    }
+
+//------------------------------------------------------------------------------
+    // COSENO 
+    public String coseno(int c) {
+        String op;
+        double divi = 0.0;
+        double nume = 0.0;
+        int cont = 1;
+        int par = 0;
+        double total = 0;
+        String r = "";
+
+        for (int i = 1; i <= c; i++) {
+            nume = Math.pow(c, par);
+            divi = (nume / factorial(par));
+            if ((cont % 2) == 1) {
+                op = "  -  ";
+                r += ((c + "^" + par) + " / " + par + "!" + op);
+                total = total + divi;
+            } else {
+                op = "  +  ";
+                r += ((c + "^" + par) + " / " + par + "!" + op);
+                total = total - divi;
+            }
+            cont++;
+            par = par + 2;
+        }
+        return r + " =  " + total;
     }
 }

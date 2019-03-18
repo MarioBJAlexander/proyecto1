@@ -8,7 +8,7 @@ public class aplication extends javax.swing.JFrame {
     String dato;
 
     public aplication() {
-        initComponents();
+        initComponents();        
     }
 
     @SuppressWarnings("unchecked")
@@ -264,6 +264,12 @@ public class aplication extends javax.swing.JFrame {
         String se = sen.seno(r);
         return se;
     }
+    
+    public String coseno(int c) {
+        Series cos = new Series();
+        String co = cos.coseno(c);
+        return co;
+    }
 
     private void ejecutarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ejecutarButtonActionPerformed
         try {
@@ -287,6 +293,9 @@ public class aplication extends javax.swing.JFrame {
             
             String serieSeno = seno(dat);
             senoText.setText(serieSeno);
+            
+            String serieCoseno = coseno(dat);
+            cosenoText.setText(serieCoseno);
 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "SOLO SE PERMITEN NÚMEROS");
